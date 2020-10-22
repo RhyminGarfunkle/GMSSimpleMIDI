@@ -37,54 +37,54 @@ If everything else is working properly but external clock isn’t working, doubl
 ARGUMENTS: none
 RETURNS: none
 
-	Initializes MIDI inputs and outputs. It MUST be called before using any other MIDI functions.
+Initializes MIDI inputs and outputs. It MUST be called before using any other MIDI functions.
 
 
 **rtmidi_probe_outs()**
 ARGUMENTS: none
 RETURNS: real
 
-	Returns the number of MIDI output ports available.
+Returns the number of MIDI output ports available.
 
 
 **rtmidi_probe_ins()**
 ARGUMENTS: none
 RETURNS: real
 
-	Returns the number of MIDI input ports available.
+Returns the number of MIDI input ports available.
 
 
 **rtmidi_name_out(port)**
 ARGUMENTS: real port, the number of the output port to get the name of
 RETURNS: string
 
-	Returns the name of the indicated MIDI output port as a string. The available ports must be first determined with rtmidi_probe_outs(). Port numbers start at 0, so if you have four MIDI devices connected to your computer, each one would be between 0-3. The port number of a device can change with different software and hardware connections, so if you wanted to, for example, save the port that MIDI data was being sent or received on in an .ini file, you could get errors if you save the actual port number.  It would be better to save the name of the port, then check which port number corresponded to that string on startup.
+Returns the name of the indicated MIDI output port as a string. The available ports must be first determined with rtmidi_probe_outs(). Port numbers start at 0, so if you have four MIDI devices connected to your computer, each one would be between 0-3. The port number of a device can change with different software and hardware connections, so if you wanted to, for example, save the port that MIDI data was being sent or received on in an .ini file, you could get errors if you save the actual port number.  It would be better to save the name of the port, then check which port number corresponded to that string on startup.
 
 
 **rtmidi_name_in(port)**
 ARGUMENTS: port, real, the number of the input port to get the name of
 RETURNS: string
 
-	Returns the name of the indicated MIDI input port as a string. The port number issue described above also applies to input ports.
+Returns the name of the indicated MIDI input port as a string. The port number issue described above also applies to input ports.
 
 
 **rtmidi_set_outport(port)**
 ARGUMENTS: real port, the number of the output port to send output to
 RETURNS: real
 
-	Sets the output port that MIDI messages will be transmitted on. The available ports must first be found with rtmidi_probe_outs and you probably also want to select the proper output port using rtmidi_name_out. Returns 1 if successful, -1 if not (usually the result of trying to use an invalid port)
+Sets the output port that MIDI messages will be transmitted on. The available ports must first be found with rtmidi_probe_outs and you probably also want to select the proper output port using rtmidi_name_out. Returns 1 if successful, -1 if not (usually the result of trying to use an invalid port)
 
 **rtmidi_set_inport(port)**
 ARGUMENTS: real port, the number of the input port to receive messages on
 RETURNS: real
 
-	Sets the input port that MIDI messages will be received on. The available ports must first be found with rtmidi_probe_ins and you probably also want to select the proper input port with rtmidi_name_in. Returns 1 if successful, -1 if not (usually the result of trying to use an invalid port)
+Sets the input port that MIDI messages will be received on. The available ports must first be found with rtmidi_probe_ins and you probably also want to select the proper input port with rtmidi_name_in. Returns 1 if successful, -1 if not (usually the result of trying to use an invalid port)
 
 **rtmidi_send_message(byte1,byte2,byte3)**
 ARGUMENTS: real byte1, real byte2, real byte3
 RETURNS: none
 
-	Sends a three-byte MIDI message using the previously selected output port. Numbers are used instead of bytes. To send a message with less than three bytes, for example a timing pulse, use a negative number for the unneeded bytes. Example: rtmidi_send_message(146,60,80) translates to “Channel 3 Note On, C5, Velocity 80”, rtmidi_send_message(248,-1,-1) sends a single timing pulse to all channels. There’s a quick breakdown of some simple MIDI messages at the end of this document. This argument accepts hexadecimal instead of decimal, if you prefer.
+Sends a three-byte MIDI message using the previously selected output port. Numbers are used instead of bytes. To send a message with less than three bytes, for example a timing pulse, use a negative number for the unneeded bytes. Example: rtmidi_send_message(146,60,80) translates to “Channel 3 Note On, C5, Velocity 80”, rtmidi_send_message(248,-1,-1) sends a single timing pulse to all channels. There’s a quick breakdown of some simple MIDI messages at the end of this document. This argument accepts hexadecimal instead of decimal, if you prefer.
 
 
 **RECEIVING MESSAGES:** Before documenting the two functions to receive MIDI messages, let me explain how it works in GMSSimpleMIDI. When a MIDI message is received on the selected port, it goes into a queue. Calling rtmidi_check_message does two things: it returns if there’s an unread message in the queue, and loads that message into a message array contained in the DLL. This will destroy any information that was previously in the array, even if there was no message in the queue, so make sure to get the data before calling rtmidi_check_message again! Up to 1024 messages will stack in the queue - more than that, and they’ll start getting discarded as they come in. You usually want to check for messages every step (or better, multiple times a step, until there are no more new messages).
@@ -95,59 +95,48 @@ RETURNS: none
 ARGUMENTS: none
 RETURNS: real
 
-	Checks if there’s an unread MIDI message in the queue. If so, the number of bytes in the message is returned and the message is removed from the queue and into the message array. If not, the message array is cleared and -1 is returned.
+Checks if there’s an unread MIDI message in the queue. If so, the number of bytes in the message is returned and the message is removed from the queue and into the message array. If not, the message array is cleared and -1 is returned.
 
 
 **rtmidi_get_message(byte)**
 ARGUMENTS: byte, real;
 RETURNS: real
 
-	Returns the data at the indicated index of the message array. Since rtmidi_check_message() clears the message array, you must call this if you don’t want your incoming MIDI data to be destroyed!
+Returns the data at the indicated index of the message array. Since rtmidi_check_message() clears the message array, you must call this if you don’t want your incoming MIDI data to be destroyed!
 
 **Code example:**
 
-//STEP EVENT
-
-var b,i,listMessage;
-
-ds_list_clear(midiMessages)//midiMessages is a ds_list that was created previously, and holds all MIDI messages that came in on this step
-
-b = rtmidi_check_message()
-
-while b > 0{
-
-	listMessage = ds_list_create()
-	
-	for (i = 0; i < b; i += 1){
-	
-		ds_list_add(listMessage,rtmidi_get_message(i))
-		
-		}
-		
-	ds_list_add(midiMessages,listMessage)
-	
+	//STEP EVENT
+	var b,i,listMessage;
+	ds_list_clear(midiMessages)//midiMessages is a ds_list that was created previously, and holds all MIDI messages that came in on this step
 	b = rtmidi_check_message()
+	while b > 0{
+		listMessage = ds_list_create()	
+		for (i = 0; i < b; i += 1){	
+			ds_list_add(listMessage,rtmidi_get_message(i))		
+			}		
+		ds_list_add(midiMessages,listMessage)	
+		b = rtmidi_check_message()	
+		}
 	
-	}
-	
-//We now have a list, midiMessages, filled with smaller lists that contain all the midi messages that were received this step. Make sure to destroy the smaller lists after using the data in them!
+	//We now have a list, midiMessages, filled with smaller lists that contain all the midi messages that were received this step. Make sure to destroy the smaller lists after using the data in them!
 
 
 **rtmidi_ignore_messages(sysex,timing,activesensing)**
 ARGUMENTS: sysex, bool; timing, bool; activesensing, bool;
 RETURNS: none
 
-	By default, sysex, timing, and “active sensing” messages are ignored and will not be added to the message queue. True will ignore that message type, false will allow them. Timing messages can clog up the queue if you don’t need them (MIDI sends 24 timing pulses for every quarter note), sysex are specific to different devices and is usually used for things like data backup and firmware updates, and “active sensing” isn’t really used by anything - apparently when the MIDI standard was first developed in the 80s, they thought it was a good idea for controllers to send synths a message every 300ms indicating that they were still plugged in, so the synth could turn all its notes off if the connection was broken. No modern controller sends this, and no synths I know listen for it. I’d never even heard of it until I started coding this!
+By default, sysex, timing, and “active sensing” messages are ignored and will not be added to the message queue. True will ignore that message type, false will allow them. Timing messages can clog up the queue if you don’t need them (MIDI sends 24 timing pulses for every quarter note), sysex are specific to different devices and is usually used for things like data backup and firmware updates, and “active sensing” isn’t really used by anything - apparently when the MIDI standard was first developed in the 80s, they thought it was a good idea for controllers to send synths a message every 300ms indicating that they were still plugged in, so the synth could turn all its notes off if the connection was broken. No modern controller sends this, and no synths I know listen for it. I’d never even heard of it until I started coding this!
 
 **rtmidi_deinit()**
 ARGUMENTS: none
 RETURNS: none
 
-	Destroys the objects in the DLL and frees up all memory associated with them. rtmidi_init() must be called again before any further rtmidi functions can be used.
+Destroys the objects in the DLL and frees up all memory associated with them. rtmidi_init() must be called again before any further rtmidi functions can be used.
 
 **Included scripts:**
 
-	GMSSimpleMIDI contains a few simple GML scripts for common MIDI tasks.
+GMSSimpleMIDI contains a few simple GML scripts for common MIDI tasks.
 
 **sMIDISendNoteOn(channel,note,velocity)**
 ARGUMENTS: real channel, real note, real velocity
@@ -171,7 +160,7 @@ RETURNS: none
 
 
 NON-WINDOWS EXPERIMENTAL FUNCTIONS
-	I haven’t been able to test these! Virtual ports aren’t compatible with the Windows media library, only the ALSA, JACK and coreMIDI systems on Linux and OSX. However, there’s no reason they shouldn’t work on Mac or Linux, as long as the source is recompiled as a .dylib (mac) or .so (linux). If you do recompile, make sure to use the compiler statements listed here (http://www.music.mcgill.ca/~gary/rtmidi/#compiling) or else it won’t work!
+I haven’t been able to test these! Virtual ports aren’t compatible with the Windows media library, only the ALSA, JACK and coreMIDI systems on Linux and OSX. However, there’s no reason they shouldn’t work on Mac or Linux, as long as the source is recompiled as a .dylib (mac) or .so (linux). If you do recompile, make sure to use the compiler statements listed here (http://www.music.mcgill.ca/~gary/rtmidi/#compiling) or else it won’t work!
 
 ****THESE FUNCTIONS DO NOT WORK IN WINDOWS**
 
@@ -179,13 +168,13 @@ NON-WINDOWS EXPERIMENTAL FUNCTIONS
 ARGUMENTS: name, string
 RETURNS: none
 
-	Creates a “virtual” MIDI input port that other software, such as a DAW, can connect to. The supplied string will be the name that other software will use for the port.
+Creates a “virtual” MIDI input port that other software, such as a DAW, can connect to. The supplied string will be the name that other software will use for the port.
 
 **rtmidi_create_virtual_outport(name)**
 ARGUMENTS: name, string
 RETURNS: none
 
-	Creates a virtual MIDI outport for other software to connect to. The supplied string will be the name other software will use for the port.
+Creates a virtual MIDI outport for other software to connect to. The supplied string will be the name other software will use for the port.
 
 
 
