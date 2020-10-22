@@ -1,0 +1,3 @@
+﻿  GMSSimpleMIDI.cpp
+C:\Users\matth\source\repos\GMSSimpleMIDI\GMSSimpleMIDI\GMSSimpleMIDI.cpp(331,14): warning C4018: '<=': signed/unsigned mismatch
+  GMSSimpleMIDI.vcxproj -> C:\Users\matth\source\repos\GMSSimpleMIDI\Debug\GMSSimpleMIDI.dll
