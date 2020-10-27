@@ -27,8 +27,8 @@ You’ll need a MIDI source (a controller or sequencer, or DAW) and something to
 TROUBLESHOOTING: Use the internal clock until you’re certain everything else is working. If you see notes in the form of numbers along the bottom when you hold down notes on your MIDI controller, notes are being received properly. If the red note cycles up and down when you hold multiple notes, the internal clock is working. Make sure that you’re sending on both the proper port and proper channel, check that your instrument is receiving on the same channel you’re sending.
 If you see no notes along the bottom when you hold down notes, make sure you’re using the proper MIDI input port and receiving on the proper channel.
 If everything else is working properly but external clock isn’t working, double check the clock settings on the sending device. The simple arpeggiator expects 24ppq (you can use whatever clock rate you choose in when implementing GMSSimpleMIDI, but 24ppq is the standard).
-	If you see "undefined" under inport or outport, you don't have any MIDI input or output ports available on your computer. Double check that your interface/controller is correctly installed, or use external software like rtpMidi to create virtual ports.
-	RtMidi doesn't consume received messages. If you have a DAW or other software open, it may be necessary to force it to ignore MIDI messages, at least on certain channels, while using the arpeggiator to prevent duplicate signals.
+	If you see "undefined" under inport or outport, you don't have any MIDI input or output ports available on your computer. Double check that your interface/controller is correctly installed, or use external software like loopMidi to create virtual ports.
+	RtMidi doesn't consume received messages. If you have a DAW or other software open, it may be necessary to force it to ignore MIDI messages, at least on certain channels, while using the arpeggiator to prevent duplicate notes.
 
 
 ## GMSSimpleMIDI Functions
