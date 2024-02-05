@@ -18,18 +18,12 @@
     <ClInclude Include="RtMidi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="rtmidi_c.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GMSSimpleMIDI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RtMidi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="rtmidi_c.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

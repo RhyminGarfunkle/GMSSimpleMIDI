@@ -31,7 +31,11 @@ SOFTWARE.
 #include <map>
 #include "RtMidi.h"
 
-#define fn_export extern "C" __declspec (dllexport)
+#ifdef _WIN32
+    #define fn_export extern "C" __declspec (dllexport)
+#else
+    #define fn_export extern "C"
+#endif
 
 unsigned int inPorts = 0;
 unsigned int outPorts = 0;
