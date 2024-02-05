@@ -12,3 +12,6 @@ The full extension, ready to be used in Gamemaker Studio projects, is available 
 
 [YoYoGames Marketplace]:https://marketplace.yoyogames.com/assets/9499/midi-with-gmssimplemidi
 [Itch.io.]:https://rhymingarfunkle.itch.io/gmssimplemidi
+
+Thanks to [Grix] for Mac binaries! I can't personally test them or provide official support for them, but they're there for anyone who doesn't want to compile their own.
+[Grix]:https://github.com/Grix
