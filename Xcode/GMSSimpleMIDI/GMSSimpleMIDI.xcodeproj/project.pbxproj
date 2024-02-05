@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B61DE2D92B70E55C00FE35C2 /* GMSSimpleMIDI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B61DE2D62B70E55C00FE35C2 /* GMSSimpleMIDI.cpp */; };
+		B61DE2DA2B70E55C00FE35C2 /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B61DE2D72B70E55C00FE35C2 /* RtMidi.cpp */; };
+		B61DE2DB2B70E55C00FE35C2 /* RtMidi.h in Headers */ = {isa = PBXBuildFile; fileRef = B61DE2D82B70E55C00FE35C2 /* RtMidi.h */; };
+		B61DE2DE2B70E59600FE35C2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61DE2DD2B70E59600FE35C2 /* CoreAudio.framework */; };
+		B61DE2E02B70E59B00FE35C2 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61DE2DF2B70E59B00FE35C2 /* CoreMIDI.framework */; };
+		B61DE2E22B70E5A700FE35C2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61DE2E12B70E5A700FE35C2 /* CoreFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B61DE2CA2B70E4E500FE35C2 /* libGMSSimpleMIDI.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libGMSSimpleMIDI.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61DE2D62B70E55C00FE35C2 /* GMSSimpleMIDI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GMSSimpleMIDI.cpp; path = ../../GMSSimpleMIDI/GMSSimpleMIDI.cpp; sourceTree = "<group>"; };
+		B61DE2D72B70E55C00FE35C2 /* RtMidi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RtMidi.cpp; path = ../../GMSSimpleMIDI/RtMidi.cpp; sourceTree = "<group>"; };
+		B61DE2D82B70E55C00FE35C2 /* RtMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RtMidi.h; path = ../../GMSSimpleMIDI/RtMidi.h; sourceTree = "<group>"; };
+		B61DE2DD2B70E59600FE35C2 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		B61DE2DF2B70E59B00FE35C2 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		B61DE2E12B70E5A700FE35C2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B61DE2C82B70E4E500FE35C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B61DE2E02B70E59B00FE35C2 /* CoreMIDI.framework in Frameworks */,
+				B61DE2DE2B70E59600FE35C2 /* CoreAudio.framework in Frameworks */,
+				B61DE2E22B70E5A700FE35C2 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B61DE2C12B70E4E500FE35C2 = {
+			isa = PBXGroup;
+			children = (
+				B61DE2D62B70E55C00FE35C2 /* GMSSimpleMIDI.cpp */,
+				B61DE2D72B70E55C00FE35C2 /* RtMidi.cpp */,
+				B61DE2D82B70E55C00FE35C2 /* RtMidi.h */,
+				B61DE2CB2B70E4E500FE35C2 /* Products */,
+				B61DE2DC2B70E59600FE35C2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B61DE2CB2B70E4E500FE35C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B61DE2CA2B70E4E500FE35C2 /* libGMSSimpleMIDI.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B61DE2DC2B70E59600FE35C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B61DE2E12B70E5A700FE35C2 /* CoreFoundation.framework */,
+				B61DE2DF2B70E59B00FE35C2 /* CoreMIDI.framework */,
+				B61DE2DD2B70E59600FE35C2 /* CoreAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B61DE2C62B70E4E500FE35C2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B61DE2DB2B70E55C00FE35C2 /* RtMidi.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B61DE2C92B70E4E500FE35C2 /* GMSSimpleMIDI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B61DE2D32B70E4E500FE35C2 /* Build configuration list for PBXNativeTarget "GMSSimpleMIDI" */;
+			buildPhases = (
+				B61DE2C62B70E4E500FE35C2 /* Headers */,
+				B61DE2C72B70E4E500FE35C2 /* Sources */,
+				B61DE2C82B70E4E500FE35C2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GMSSimpleMIDI;
+			productName = GMSSimpleMIDI;
+			productReference = B61DE2CA2B70E4E500FE35C2 /* libGMSSimpleMIDI.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B61DE2C22B70E4E500FE35C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					B61DE2C92B70E4E500FE35C2 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = B61DE2C52B70E4E500FE35C2 /* Build configuration list for PBXProject "GMSSimpleMIDI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B61DE2C12B70E4E500FE35C2;
+			productRefGroup = B61DE2CB2B70E4E500FE35C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B61DE2C92B70E4E500FE35C2 /* GMSSimpleMIDI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B61DE2C72B70E4E500FE35C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B61DE2DA2B70E55C00FE35C2 /* RtMidi.cpp in Sources */,
+				B61DE2D92B70E55C00FE35C2 /* GMSSimpleMIDI.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B61DE2D12B70E4E500FE35C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B61DE2D22B70E4E500FE35C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B61DE2D42B70E4E500FE35C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y62YL762Z5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					__MACOSX_CORE__,
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		B61DE2D52B70E4E500FE35C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y62YL762Z5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = __MACOSX_CORE__;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B61DE2C52B70E4E500FE35C2 /* Build configuration list for PBXProject "GMSSimpleMIDI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B61DE2D12B70E4E500FE35C2 /* Debug */,
+				B61DE2D22B70E4E500FE35C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B61DE2D32B70E4E500FE35C2 /* Build configuration list for PBXNativeTarget "GMSSimpleMIDI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B61DE2D42B70E4E500FE35C2 /* Debug */,
+				B61DE2D52B70E4E500FE35C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B61DE2C22B70E4E500FE35C2 /* Project object */;
+}
